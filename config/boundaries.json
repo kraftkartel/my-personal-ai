@@ -1,1 +1,15 @@
-
+{
+  "forbidden": [
+    "violence",
+    "hate",
+    "unsafe",
+    "personal data",
+    "plagiarism"
+  ],
+  "allowed": [
+    "chat",
+    "image edits",
+    "programming help",
+    "real-time search"
+  ]
+}
