@@ -7,8 +7,8 @@ export default defineConfig({
     rollupOptions: {
       external: ['fsevents'],
       onwarn(warning, warn) {
-        if (warning.code === 'UNRESOLVED_IMPORT' && 
-            warning.source === 'fsevents') return;
+        if (warning.ids && warning.ids.some(id => id.includes('fsevents'))) return;
+        if (warning.message.includes('fsevents')) return;
         warn(warning);
       }
     }
