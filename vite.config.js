@@ -5,8 +5,12 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      // This tells Rollup to ignore the fsevents module
-      external: ['fsevents']
+      external: ['fsevents'],
+      onwarn(warning, warn) {
+        if (warning.code === 'UNRESOLVED_IMPORT' && 
+            warning.source === 'fsevents') return;
+        warn(warning);
+      }
     }
   }
 });
