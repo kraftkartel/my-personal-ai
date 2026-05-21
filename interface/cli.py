@@ -41,5 +41,5 @@ def main():
         else:
             print("⚠️ Invalid mode. Choose chat, vision, or code.")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
