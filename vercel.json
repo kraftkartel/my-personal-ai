@@ -1,5 +1,8 @@
 {
-  "buildCommand": "npm install --no-cache vite@5 @vitejs/plugin-react@4 && npm run build",
+  "buildCommand": "npm ci && npm run build",
   "outputDirectory": "dist",
-  "framework": "vite"
+  "framework": "vite",
+  "env": {
+    "ROLLUP_WATCH": "false"
+  }
 }
