@@ -2,7 +2,5 @@
   "buildCommand": "npm ci && npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "env": {
-    "ROLLUP_WATCH": "false"
-  }
+  "ignoreCommand": "exit 1"
 }
