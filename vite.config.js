@@ -3,18 +3,12 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  root: process.cwd(),
+  optimizeDeps: {
+    exclude: ['fsevents']
+  },
   build: {
-    outDir: 'dist',
     rollupOptions: {
-      input: 'index.html',
-      external: (id) => {
-        if (id.includes('fsevents')) return true;
-        if (id.endsWith('.py')) return true;
-        if (id.includes('/modules/')) return true;
-        if (id.includes('/services/')) return true;
-        return false;
-      }
+      external: ['fsevents']
     }
   }
-});
+})
