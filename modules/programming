@@ -1,1 +1,12 @@
+# code_model.py
+from transformers import pipeline
 
+# Load a code generation model
+codegen = pipeline("text-generation", model="bigcode/starcoder")
+
+def generate_code(prompt: str) -> str:
+    """
+    Generate code based on user prompt.
+    """
+    result = codegen(prompt, max_length=200, num_return_sequences=1)
+    return result[0]["generated_text"]
